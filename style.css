@@ -727,14 +727,17 @@ form button:hover {
         margin-top: 0.5rem;
     }
 
+
     .container {
-        grid-template-columns: 1fr; /* Stack input + table */
-        padding: 15px;
+        grid-template-columns: 1fr; /* single column */
     }
 
     .output {
-        grid-column: 1 / 2; /* Table below form */
+        grid-column: 1 / 2; /* make table appear below form */
+        margin-top: 20px;
     }
+
+
 
     .charts-container {
         grid-column: 1 / 2; /* Charts below everything */
