@@ -692,3 +692,84 @@ form button:hover {
     font-size: 1.5em;
     color: #e2e8f0;
 }
+
+
+/* --- Responsive Design for Mobile --- */
+@media (max-width: 768px) {
+    .landing-header h1 {
+        font-size: 2rem;
+    }
+
+    .landing-header p {
+        font-size: 1rem;
+    }
+
+    .landing-main {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .card {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+        font-size: 1.2rem;
+        height: auto;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .navbar .current-page-name {
+        margin-top: 0.5rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* Stack input + table */
+        padding: 15px;
+    }
+
+    .output {
+        grid-column: 1 / 2; /* Table below form */
+    }
+
+    .charts-container {
+        grid-column: 1 / 2; /* Charts below everything */
+    }
+
+    .chart-container {
+        padding: 15px;
+    }
+
+    table, th, td {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .landing-header p {
+        font-size: 0.9rem;
+    }
+
+    .card {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input[type="text"], select {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
