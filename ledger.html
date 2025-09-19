@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>MoneyMinded - Ledger</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./style.css'>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="home-link">money<span>MINDED</span></a>
+        <div class="page-management">
+            <label for="page-select">Current Ledger:</label>
+            <span id="current-page-name" class="current-page-name"></span>
+            <button id="delete-page-btn">Delete This Ledger</button>
+        </div>
+    </nav>
+    <div class="container" id="container">
+        <div class="input" id="input">
+            <form id="inputform">
+                <h3>Add a New Transaction</h3>
+                <label for="amount">Enter amount: </label>
+                <input type="text" name="amount" id="amount" class="amount" required>
+                <label for="desc">Description</label>
+                <input type="text" id="desc" required>
+                <label for="transtype">Transaction Type</label>
+                <select name="transtype" id="transtype">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button type="submit">SUBMIT</button>
+            </form>
+            <div class="action-buttons">
+                <button class="summary" id="summary">SHOW BALANCE</button>
+                <button class="charts" id="charts">VIEW CHARTS</button>
+            </div>
+        </div>
+        <div class="output" id="output">
+            <h3>Transactions</h3>
+            <table id="outputTable">
+                <tr>
+                    <th>SR.NO</th>
+                    <th>AMOUNT</th>
+                    <th>DESCRIPTION</th>
+                    <th>TYPE</th>
+                    <th>DATE</th>
+                    <th>TIME</th>
+                    <th>ACTION</th>
+                </tr>
+            </table>
+        </div>
+        <div class="charts-container" id="chartsContainer" style="display: none;">
+            <div class="chart-container">
+                <h2>Transaction Distribution</h2>
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Balance Over Time</h2>
+                <canvas id="lineChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Income and Expense Histogram</h2>
+                <canvas id="histogram"></canvas>
+            </div>
+            <div class="chart-container">
+                <h2>Daily Income vs Expense</h2>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+<script src="./ledger.js"></script>
+</body>
+</html>
