@@ -819,3 +819,15 @@ form button:hover {
         display: none; /* Hide table headers on mobile */
     }
 }
+@media (max-width: 768px) {
+    /* Hide ACTION label in mobile cards */
+    .output td[data-label="ACTION"]::before {
+        content: "";
+    }
+
+    /* Add spacing for delete button */
+    .output td[data-label="ACTION"] button {
+        margin-top: 5px;
+        width: 100%;  /* optional: make button span full card width */
+    }
+}

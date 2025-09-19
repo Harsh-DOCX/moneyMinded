@@ -76,7 +76,6 @@ const showtrans = () => {
         time.setAttribute("data-label", "TIME");
 
         const deleteCell = row.insertCell(6);
-        deleteCell.setAttribute("data-label", "ACTION");
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
         deleteButton.onclick = () => deleteTransaction(index);
@@ -85,6 +84,7 @@ const showtrans = () => {
         deleteButton.style.border = "none";
         deleteButton.style.padding = "5px 10px";
         deleteButton.style.cursor = "pointer";
+        deleteButton.style.marginTop = "5px";
         deleteCell.appendChild(deleteButton);
     });
 };
