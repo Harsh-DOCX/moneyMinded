@@ -525,6 +525,7 @@ body {
 .container {
     max-width: 1200px;
     /* Wider container for ledger */
+    width: 100%;
     margin: auto;
     margin-top: 20px;
     background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.8));
@@ -539,7 +540,7 @@ body {
     /* Light text for container content */
     display: grid;
     /* Use grid for layout */
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 80% 1fr;
     /* Input column and table column */
     gap: 20px;
 }
@@ -737,7 +738,9 @@ form button:hover {
         margin-top: 20px;
     }
 
-
+    .action-buttons {
+        flex-direction: column;
+    }
 
     .charts-container {
         grid-column: 1 / 2; /* Charts below everything */
@@ -774,5 +777,45 @@ form button:hover {
     input[type="text"], select {
         font-size: 14px;
         padding: 8px;
+    }
+}
+
+/* Ledger Transaction Table - Responsive Cards */
+@media (max-width: 768px) {
+    .output table,
+    .output thead,
+    .output tbody,
+    .output th,
+    .output td,
+    .output tr {
+        display: block;
+        width: 100%;
+    }
+
+    .output tr {
+        margin-bottom: 15px;
+        border: 1px solid #334155;
+        border-radius: 8px;
+        padding: 10px;
+        background: rgba(30,41,59,0.7);
+    }
+
+    .output td {
+        padding: 8px;
+        text-align: right;
+        position: relative;
+        border-bottom: none;
+    }
+
+    .output td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: #00ff88;
+    }
+
+    .output th {
+        display: none; /* Hide table headers on mobile */
     }
 }

@@ -48,19 +48,35 @@ const showtrans = () => {
     const transactions = allData[currentPage] || [];
     transactions.forEach((trans, index) => {
         const row = table.insertRow();
-        row.insertCell(0).textContent = index + 1;
-        
+
+        const sr = row.insertCell(0);
+        sr.textContent = index + 1;
+        sr.setAttribute("data-label", "SR.NO");
+
         const amountCell = row.insertCell(1);
         amountCell.textContent = trans.amount;
         amountCell.style.color = trans.type === "income" ? "green" : "red";
         amountCell.style.fontWeight = "bold";
+        amountCell.setAttribute("data-label", "AMOUNT");
 
-        row.insertCell(2).textContent = trans.desc;
-        row.insertCell(3).textContent = trans.type;
-        row.insertCell(4).textContent = trans.date;
-        row.insertCell(5).textContent = trans.time;
+        const desc = row.insertCell(2);
+        desc.textContent = trans.desc;
+        desc.setAttribute("data-label", "DESCRIPTION");
+
+        const type = row.insertCell(3);
+        type.textContent = trans.type;
+        type.setAttribute("data-label", "TYPE");
+
+        const date = row.insertCell(4);
+        date.textContent = trans.date;
+        date.setAttribute("data-label", "DATE");
+
+        const time = row.insertCell(5);
+        time.textContent = trans.time;
+        time.setAttribute("data-label", "TIME");
 
         const deleteCell = row.insertCell(6);
+        deleteCell.setAttribute("data-label", "ACTION");
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
         deleteButton.onclick = () => deleteTransaction(index);
@@ -72,6 +88,7 @@ const showtrans = () => {
         deleteCell.appendChild(deleteButton);
     });
 };
+
 
 const addtrans = () => {
     let amount = document.getElementById("amount").value;
